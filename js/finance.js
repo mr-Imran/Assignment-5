@@ -41,12 +41,14 @@ function handleDonation(donationid) {
 function addToHistory(donationName, donationAmount) {
     const historyList = document.getElementById('history-list');
     const currentDate = new Date().toLocaleString();
-
+    const onlytime = new Date().toLocaleTimeString();
+    const onlydate = new Date().toLocaleDateString();  
     const historyItem = `
-        <div class="card border my-6 border-[#1111111A] rounded-2xl p-4">
-            <h3 class="font-semibold text-lg">${donationName}</h3>
-            <p class="text-sm text-gray-500">${currentDate}</p>
-            <span class="font-semibold mt-2 block">${donationAmount} BDT</span>
+        <div class="card border my-4 border-[#1111111A] rounded-2xl p-10 space-x-2 w-3/7">
+            <span class="indicator-item badge badge-primary">${onlytime}</span>
+            <h3 class="font-semibold text-2xl text-black">${donationName}</h3>
+            <p class="text-lg text-gray-800"> Date : ${onlydate}</p>
+            <span class="font-bold mt-2 block">${donationAmount} BDT</span>
         </div>
     `;
 
@@ -67,5 +69,18 @@ document.getElementById('btn-history').addEventListener('click', () => {
     } else {
         historySection.style.display = 'none';
         sections.style.display = 'block';
+    }
+});
+
+document.getElementById('btn-donation').addEventListener('click', () => {
+    const historySection = document.getElementById('history-section');
+    const sections = document.getElementById('sections');
+
+    if (sections.style.display === 'none' || !sections.style.display) {
+        sections.style.display = 'block';
+        historySection.style.display = 'none';
+    } else {
+        sections.style.display = 'none';
+        historySection.style.display = 'block';
     }
 });
