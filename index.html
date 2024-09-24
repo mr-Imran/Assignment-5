@@ -8,10 +8,12 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style/index.css" />
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/lexend@5.1.0/index.min.css">
 </head>
-
-<body class="font-lexend">
+<style>
+    
+</style>
+<body>
     <header class="sticky top-0 z-50 bg-transparent backdrop-blur-sm pb-8 ">
         <div class="bg-[#F9F7F3]">
             <nav class="navbar py-6 container mx-auto grid grid-cols-1 md:grid-cols-3 justify-center gap-4">
@@ -28,37 +30,58 @@
                 <div class="navbar-end gap-3 order-2 md:order-3 w-full justify-center md:justify-end">
                     <img class="shadow-sm" src="assets/coin.png" alt="" />
                     <p class="text-black text-xl font-medium">
-                        <span id="accountBalance">5500</span> BDT
+                        <span id="accountbalance">3000</span> BDT
                     </p>
                 </div>
             </nav>
         </div>
-        
-        <div class="flex justify-center items-center mt-4 mb-3 gap-4 container mx-auto bottomnav transition-all duration-300">
+
+        <div
+            class="flex justify-center items-center mt-4 mb-3 gap-4 container mx-auto bottomnav transition-all duration-300">
             <button id="btn-donation" class="btn px-8 py-4 text-xl font-semibold content-center bg-[#B4F461] shadow-lg">
                 Contribute
             </button>
             <button id="btn-history"
-                class="btn px-8 py-4 text-xl font-semibold content-center text-[#111111B3] border-[#B4F461] shadow-lg">
+                class="btn btn-outline px-8 py-4 text-xl font-semibold content-center text-[#111111B3] border-[#B4F461] shadow-lg">
                 Activity
             </button>
         </div>
     </header>
 
+
     <section class="container mx-auto flex flex-col gap-8" id="sections">
         <!-- dynamic value -->
     </section>
 
-    <section id="history-section" style="display:none;">
-        <ul id="history-list">
-            <!-- Donation history will be appended here -->
-        </ul>
-    </section>
+
+
+    <dialog id="my_modal_1" class="modal">
+        <div class="modal-box flex flex-col justify-center items-center gap-4">
+            <h3 class="text-4xl font-bold">Congrats!</h3>
+            <img src="assets/coin.png" alt="congrats" title="congrats">
+            <p class="py-4"></p> <!-- This will be updated dynamically -->
+            <div class="modal-action">
+                <form method="dialog">
+                    <button id="btn-modal" class="btn" type="submit">Press ESC key or click the button below to
+                        close</button>
+                </form>
+            </div>
+        </div>
+    </dialog>
+
+    <div id="history-section" class="hidden p-4">
+        <h2 class="text-2xl font-bold mb-4">Donation History</h2>
+        <div id="history-list" class="grid grid-cols-1 gap-6">
+
+        </div>
+    </div>
+    
     
 
     <footer class="footer bg-[#F9F7F3] h-20 py-6 my-6 absolute"></footer>
     <script src="js/animation.js"></script>
     <script src="js/cards.js"></script>
+    <script src="js/finance.js"></script>
 </body>
 
 </html>
