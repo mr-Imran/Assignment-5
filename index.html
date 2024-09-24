@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - Support Bangladesh</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style/index.css" />
+
+</head>
+
+<body class="font-lexend">
+    <header class="sticky top-0 z-50 bg-transparent backdrop-blur-sm pb-8 ">
+        <div class="bg-[#F9F7F3]">
+            <nav class="navbar py-6 container mx-auto grid grid-cols-1 md:grid-cols-3 justify-center gap-4">
+                <div class="navbar-start order-3 md:order-1 w-full justify-center md:justify-start">
+                    <button id="btn-blog"
+                        class="btn btn-outline shadow-lg border-none text-xl font-medium text-black bg-[#B4F461] px-8 py-3 content-center">
+                        Updates
+                    </button>
+                </div>
+                <div class="navbar-center gap-4 order-1 md:order-2 w-full justify-center">
+                    <img src="assets/logo.png" alt="support bangladesh" title="support bangladesh" />
+                    <h1 class="text-xl font-semibold ">Support Bangladesh</h1>
+                </div>
+                <div class="navbar-end gap-3 order-2 md:order-3 w-full justify-center md:justify-end">
+                    <img class="shadow-sm" src="assets/coin.png" alt="" />
+                    <p class="text-black text-xl font-medium">
+                        <span id="accountBalance">5500</span> BDT
+                    </p>
+                </div>
+            </nav>
+        </div>
+        
+        <div class="flex justify-center items-center mt-4 mb-3 gap-4 container mx-auto bottomnav transition-all duration-300">
+            <button id="btn-donation" class="btn px-8 py-4 text-xl font-semibold content-center bg-[#B4F461] shadow-lg">
+                Contribute
+            </button>
+            <button id="btn-history"
+                class="btn px-8 py-4 text-xl font-semibold content-center text-[#111111B3] border-[#B4F461] shadow-lg">
+                Activity
+            </button>
+        </div>
+    </header>
+
+    <section class="container mx-auto flex flex-col gap-8" id="sections">
+        <!-- dynamic value -->
+    </section>
+
+    <section id="history-section" style="display:none;">
+        <ul id="history-list">
+            <!-- Donation history will be appended here -->
+        </ul>
+    </section>
+    
+
+    <footer class="footer bg-[#F9F7F3] h-20 py-6 my-6 absolute"></footer>
+    <script src="js/animation.js"></script>
+    <script src="js/cards.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+
+.bottomnav {
+    height: auto;
+    padding: 2rem;
+}
+.bottomnav.shrink {
+    height: 60px; 
+    padding: 1rem;
+}
