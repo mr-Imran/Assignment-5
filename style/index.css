@@ -7,3 +7,22 @@
     height: 60px; 
     padding: 1rem;
 }
+
+
+@keyframes gapAnimation {
+    0% {
+        gap: 0;
+    }
+    100% {
+        gap: 1rem; 
+    }
+}
+
+.gap-animation {
+    animation: gapAnimation 0.5s ease forwards; 
+}
+
+
+.transition-gap {
+    transition: gap 0.5s ease; 
+}
