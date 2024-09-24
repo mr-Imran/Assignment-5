@@ -28,39 +28,35 @@ const donationData = [
     }
 ];
 
-function generatepostcard(){
-    const section = document.getElementById('sections')
+function generatepostcard() {
+    const section = document.getElementById('sections');
     donationData.forEach(item => {
         const cardhtmlcode = `
-        
-      <div class="card lg:card-side bg-base-100 shadow-xl p-8 mt-10 rounded-2xl border border-[#1111111A]">
+            <div class="card lg:card-side bg-base-100 shadow-xl p-8 mt-10 rounded-2xl border border-[#1111111A]">
                 <img src="${item.imagesource}" alt="${item.cardtitle}" title="${item.cardtitle}" />
                 <div class="card-body gap-4">
-                    <button class="btn bg-[#1111110D] text-[#111111B3] px-4 py-3 font-semibold text-lg">
+                    <span class="flex items-center space-x-2 bg-[#38383816] w-1/4 p-4 rounded-xl">
                         <img src="assets/coin.png" alt="">
-                        <span id="${item.donationid}">${item.totaldonated}</span> BDT
-                    </button>
+                        <span class="text-gray-700 font-bold text-xl"  id="${item.donationid}">${item.totaldonated}</span> <span class="text-gray-700 font-bold text-xl" > BDT </span>
+                    </span>
                     <h2 class="card-title">${item.cardtitle}</h2>
                     <p>${item.description}</p>
                     <input id="input-donation-amount-for-${item.id}" type="text" title="donation amount"
                         placeholder="Enter Donation Amount" class="p-4 border border-[#1111111A] rounded-lg" />
-                    <button id="${item.buttonid}" class="btn btn-outline bg-[#B4F461] px-8 py-4 text-xl font-semibold content-center border-none">
-                        Contribute
+                    <button id="${item.buttonid}" class="btn btn-outline bg-[#B4F461] px-8 py-4 text-xl font-extrabold content-center border-none">
+                        Donate Now
                     </button>
                 </div>
             </div>
-        
-        `
+        `;
 
-        section.innerHTML += cardhtmlcode
-
+        section.innerHTML += cardhtmlcode;
     });
 
     donationData.forEach(item => {
         const button = document.getElementById(item.buttonid);
-        button.addEventListener('click', () => handledonation(item.id)
-        );
-    })
+        button.addEventListener('click', () => handleDonation(item.id));
+    });
 }
 
 window.onload = generatepostcard;
