@@ -58,29 +58,3 @@ function addToHistory(donationName, donationAmount) {
 }
 
 document.getElementById('accountbalance').innerText = accountbalance;
-
-document.getElementById('btn-history').addEventListener('click', () => {
-    const historySection = document.getElementById('history-section');
-    const sections = document.getElementById('sections');
-
-    if (historySection.style.display === 'none' || !historySection.style.display) {
-        historySection.style.display = 'block';
-        sections.style.display = 'none';
-    } else {
-        historySection.style.display = 'none';
-        sections.style.display = 'block';
-    }
-});
-
-document.getElementById('btn-donation').addEventListener('click', () => {
-    const historySection = document.getElementById('history-section');
-    const sections = document.getElementById('sections');
-
-    if (sections.style.display === 'none' || !sections.style.display) {
-        sections.style.display = 'block';
-        historySection.style.display = 'none';
-    } else {
-        sections.style.display = 'none';
-        historySection.style.display = 'block';
-    }
-});
